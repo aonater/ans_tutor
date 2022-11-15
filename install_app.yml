@@ -6,8 +6,9 @@
   - name: update repo index
     apt:
       update_cache: yes
- 
+    when: ansible_distribution in ["Debian", "Ubuntu"]
   - name: install iproute2 package
     apt:
       name: iproute2
       state: present
+    when: ansible_distribution == "Ubuntu"
