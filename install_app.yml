@@ -12,3 +12,11 @@
       name: iproute2
       state: present
     when: ansible_distribution == "Ubuntu"
+  
+  - name: copy test file
+    copy:
+      src: test.txt
+      dest: test.txt
+      owner: root
+      group: root
+      mode: 06444
